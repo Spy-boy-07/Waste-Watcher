@@ -24,10 +24,12 @@
                 android:text="Help fight food waste and hunger by donating your leftover food! With just a few taps, you can connect with local NGOs and donate your surplus food to those in need. Not only will you reduce waste, but you'll also make a positive impact in your community. Donate now and make a difference."
                 android:padding="12dp"
                 android:layout_marginTop="18dp"
+                android:layout_marginBottom="8dp"
                 android:textSize="16dp"
                 android:textStyle="normal"
                 android:textAlignment="center"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/img"
                 />
             <ImageView
                 android:id="@+id/img"

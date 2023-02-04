@@ -1,6 +1,7 @@
 package com.example.wastewatcher.food;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.wastewatcher.R;
 import com.example.wastewatcher.User;
+import com.example.wastewatcher.logreg.loginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,8 +42,15 @@ Task<Void> ref;
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser curruser = auth.getCurrentUser();
-
+        if (curruser == null) {
+            Intent intent = new Intent(this, loginActivity.class);
+            startActivity(intent);
+            finish();
+        }
         Button add = findViewById(R.id.additembuttontodatabase);
+
+
+
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,42 +64,17 @@ Task<Void> ref;
                     items Item = new items(name,weight);
 
                     DatabaseReference userref = FirebaseDatabase.getInstance().getReference("users").child(curruser.getUid());
-                    userref.addValueEventListener(new ValueEventListener() {
+                    db = FirebaseDatabase.getInstance();
+                    ref = db.getReference("Inventory").child("Items").child(name).setValue(Item).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            User userrn = snapshot.getValue(User.class);
-                            db = FirebaseDatabase.getInstance();
-                            ref = db.getReference("Inventory").child(userrn.toString()).child(name).setValue(Item).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    pname.setText("");
-                                    pw.setText("");
-                                    Toast.makeText(AddInINventory.this,"Success",Toast.LENGTH_SHORT).show();
-                                }
-                            });
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
+                        public void onComplete(@NonNull Task<Void> task) {
+                            pname.setText("");
+                            pw.setText("");
+                            Toast.makeText(AddInINventory.this,"Success",Toast.LENGTH_SHORT).show();
                         }
                     });
-//
-//                    db = FirebaseDatabase.getInstance();
-//                    ref = db.getReference("Inventory").child().child(name).setValue(Item).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<Void> task) {
-//                            pname.setText("");
-//                            pw.setText("");
-//                            Toast.makeText(AddInINventory.this,"Success",Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
-
                 }
-
             }
         });
-
-
     }
 }

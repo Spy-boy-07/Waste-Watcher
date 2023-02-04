@@ -97,25 +97,27 @@ public class registrationActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             User ouruser = new User(FirebaseAuth.getInstance().getCurrentUser().getUid(),usename, name, email,phone,city,area);
+
                             FirebaseDatabase.getInstance().getReference("users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(ouruser).addOnCompleteListener(new OnCompleteListener<Void>() {
+
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
+                                            FirebaseDatabase.getInstance().getReference("users")
+                                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                    .child("blue");
+                                            FirebaseDatabase.getInstance().getReference("users")
+                                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                            .child("green");
                                             showMainMethod();
                                         }
                                     });
-//                            // Sign in success, update UI with the signed-in user's information
-//                            Log.d(TAG, "createUserWithEmail:success");
-//                            FirebaseUser user = mAuth.getCurrentUser();
-//                            updateUI(user);
+//
                         } else {
-                            // If sign in fails, display a message to the user.
-//                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-//                            Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
-//                                    Toast.LENGTH_SHORT).show();
+
                             Toast.makeText(registrationActivity.this, "Authentication Failed!", Toast.LENGTH_SHORT).show();
-//                            updateUI(null);
+//
                         }
                     }
                 });

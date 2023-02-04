@@ -12,6 +12,18 @@
         android:theme="@style/Theme.WasteWatcher"
         tools:targetApi="31">
         <activity
+            android:name=".garbage.gartips"
+            android:exported="false" />
+        <activity
+            android:name=".garbage.dry"
+            android:exported="false" />
+        <activity
+            android:name=".garbage.wet"
+            android:exported="false" />
+        <activity
+            android:name=".garbage.garbagetrack"
+            android:exported="false" />
+        <activity
             android:name=".food.TrackWasteActivity"
             android:exported="false" />
         <activity
