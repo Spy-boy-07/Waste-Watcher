@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "516341955142",
+    "project_id": "wastewatcher-a729c",
+    "storage_bucket": "wastewatcher-a729c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516341955142:android:4855c87b66bc23cd496847",
+        "android_client_info": {
+          "package_name": "com.example.wastewatcher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516341955142-n5k8hi6lhg4dafcfd21outjlobmqqhod.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWmjT2gV9DVO_FM5_tn9hueUwJZDwgfSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516341955142-n5k8hi6lhg4dafcfd21outjlobmqqhod.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
