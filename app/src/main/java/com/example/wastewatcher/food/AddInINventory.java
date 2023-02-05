@@ -31,7 +31,6 @@ String name,weight;
 FirebaseDatabase db;
 Task<Void> ref;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,9 +48,6 @@ Task<Void> ref;
         }
         Button add = findViewById(R.id.additembuttontodatabase);
 
-
-
-
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +56,6 @@ Task<Void> ref;
 
                 if (!name.isEmpty() && !weight.isEmpty()){
                     final String[] nodename = new String[1];
-
                     items Item = new items(name,weight);
 
                     DatabaseReference userref = FirebaseDatabase.getInstance().getReference("users").child(curruser.getUid());

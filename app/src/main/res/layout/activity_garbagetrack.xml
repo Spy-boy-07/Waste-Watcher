@@ -22,8 +22,9 @@
 
         <!-- Row 1 -->
         <!-- Column 1 -->
-        <androidx.cardview.widget.CardView
+        <RelativeLayout
             android:id="@+id/dryblue"
+            android:background="@drawable/rectangle3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
@@ -54,13 +55,14 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="Dry Waste"
+                    android:textColor="#fff"
                     android:textSize="17dp"/>
 
 
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </RelativeLayout>
 
         <!-- Column 2 -->
 
@@ -70,7 +72,8 @@
         <!-- Column 1 -->
 
         <!-- Column 2 -->
-        <androidx.cardview.widget.CardView
+        <RelativeLayout
+            android:background="@drawable/rectangle2"
             android:id="@+id/wetgreen"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -106,13 +109,14 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="Wet Waste"
+
                     android:textSize="17dp"/>
 
 
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </RelativeLayout>
 
 
         <!-- Row 2 -->

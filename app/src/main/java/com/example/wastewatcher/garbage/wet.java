@@ -1,6 +1,7 @@
 package com.example.wastewatcher.garbage;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import com.example.wastewatcher.R;
 
 public class wet extends AppCompatActivity {
 
+    CardView addgreen,viewgreen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,21 @@ public class wet extends AppCompatActivity {
                 amagreen();
             }
         });
+
+        addgreen = findViewById(R.id.addgreen);
+        viewgreen = findViewById(R.id.viewgreen);
+
+        addgreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openaddg();
+            }
+        });
+    }
+
+    private void openaddg() {
+        Intent intent = new Intent(this, AddInGreen.class);
+        startActivity(intent);
     }
 
     private void amagreen() {

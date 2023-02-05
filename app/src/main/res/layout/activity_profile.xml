@@ -12,15 +12,15 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="78dp"
     android:text="Profile"
-    android:textColor="@color/black"
     android:textSize="32sp"
     android:textStyle="bold"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
-<androidx.cardview.widget.CardView
+<com.google.android.material.card.MaterialCardView
     android:layout_width="match_parent"
+    style="@style/Widget.Material3.CardView.Filled"
     android:layout_height="wrap_content"
     android:layout_marginTop="40dp"
     android:elevation="50dp"
@@ -95,11 +95,11 @@
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
 
 <Button
     android:id="@+id/LogOut"
-    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginBottom="60dp"

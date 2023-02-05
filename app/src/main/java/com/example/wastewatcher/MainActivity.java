@@ -32,15 +32,6 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-        Button buttlogout = findViewById(R.id.logout_button);
-        buttlogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                LogoutUser();
-            }
-        });
-
-
         food = findViewById(R.id.food);
         food.setOnClickListener(new View.OnClickListener() {
             @Override

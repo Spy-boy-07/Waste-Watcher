@@ -6,12 +6,14 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RelativeLayout;
 
 import com.example.wastewatcher.R;
+import com.google.android.material.card.MaterialCardView;
 
 public class garbagetrack extends AppCompatActivity {
 
-    CardView greenwet,bluedry;
+    RelativeLayout greenwet,bluedry;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,4 +47,5 @@ public class garbagetrack extends AppCompatActivity {
         Intent intent = new Intent(this, dry.class);
         startActivity(intent);
     }
+
 }
